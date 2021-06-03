@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'visitors',
     'accounts',
-    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +126,3 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CRISPY_TEMPLATE_PACK = 'uni_form'

@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+
+
+{% block content %}
+ {% for r in rooms%}
+ <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{r.name}}</h5>
+      <p class="card-text">{{r.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${{r.price}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+ {% endfor %}
+
+{% endblock %}
