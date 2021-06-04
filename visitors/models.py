@@ -18,8 +18,8 @@ class Rooms(models.Model):
 class Bookings(models.Model):
     visitor = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     room = models.ForeignKey(Rooms, null=False,on_delete=models.CASCADE)
-    check_in = models.DateTimeField(default= now) 
-    check_out = models.DateTimeField(default= now) 
+    check_in = models.DateField(default= now) 
+    check_out = models.DateField(default= now) 
 
 
 class ContactForm(models.Model):
@@ -27,5 +27,7 @@ class ContactForm(models.Model):
     phone_number = models.IntegerField()
     email = models.EmailField()
     message = models.CharField(max_length=300)
+    visitor = models.ForeignKey(settings.AUTH_USER_MODEL,blank=True, null=True, on_delete=models.CASCADE)
+
 
 

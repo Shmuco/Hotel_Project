@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+
+
+{% block content %}
+ {% for r in bookings %}
+  <div class = 'container'>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{r.check_in}} - {{r.check_out}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{r.visitor}}</h5>
+      <p class="card-text">
+          <ul>
+              <li>price</li>
+              <li>special request</li>
+          </ul>
+        </p>
+        
+    </div>
+    <a href="{% url 'editbooking' r.id %}" class="badge badge-warning">Edit Booking</a>
+    <a href="{% url 'viewbooking' r.id %}" class="badge badge-warning">View Booking</a>
+</div>
+
+ {% endfor %}
+
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+
+
+{% block content %}
+
+{% for m in messages %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">m.name</h5>
+      <p>Phone Number: {{m.phone_number}}</p>
+      <p>Email: <a href="mailto:{{m.email}}">{{m.email}}</p></a>
+      <p>User: {{m.visitio.first_name}}</p>
+      <p class="card-text">{{m.message}}</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+
+
+{% endfor %}
+{% endblock %}
+

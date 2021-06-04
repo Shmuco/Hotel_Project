@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+
+
+{% block content %}
+  <div class = 'container'>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{object.check_in}} - {{object.check_out}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{object.visitor}}</h5>
+      <p class="card-text">
+          <ul>
+              <li>price</li>
+              <li>special request</li>
+          </ul>
+        </p>
+        
+    </div>
+    <a href="{% url 'editbooking' object.id %}" class="badge badge-warning">Edit Booking</a>
+    <a href="{% url 'allbookings' %}" class="badge badge-warning">Return</a>
+    <a href="" class="badge badge-warning">Add new booking</a>
+    <form action = "{% url 'delete_booking' object.id%}" method="post" >
+        {% csrf_token %}
+        <button class="badge badge-warning" type="submit">Delete</button>
+    
+    </form>
+</div>
+
+
+
+{% endblock %}
+
